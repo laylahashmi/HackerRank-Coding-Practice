@@ -20,3 +20,20 @@
 # -proportion of positive values
 # -proportion of negative values
 # -proportion of zeros
+
+
+def plusMinus(arr):
+    result = {"p":0, "n":0, "z":0}
+    for number in arr:
+        if number > 0:
+            result["p"] += 1
+        elif number < 0:
+            result["n"] += 1
+        else:
+            result["z"] += 1
+    print("{:.6f}".format(result["p"]/len(arr)));
+    print("{:.6f}".format(result["n"]/len(arr)));
+    print("{:.6f}".format(result["z"]/len(arr)));
+
+
+plusMinus([-3, -7, 3, 7, 6, 0])
