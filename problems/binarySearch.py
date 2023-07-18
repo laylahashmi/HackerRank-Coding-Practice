@@ -32,12 +32,23 @@ def binary_search(lst, value, left=None, right=None):
     # --Get middle index of the index range
     mid = (left + right) // 2
 
-    #  Base case: found the value at middle index, return index
+    # Base case: last item in index range is not the value, return -1
+    if right - left <= 1 and lst[mid] != value:
+        return -1
+
+    # Base case: found the value at middle index, return index
     if list[mid] == value:
         return mid
 
-    #  Base case: value not in list, return -1
+    # Recursive case: check value for new, smaller index range
+    # -- value checked was greater than arg value
+    elif lst[mid] > value:
+        return binary_search(lst, value, left=left, right=(mid-1))
 
-    #  Recursive case: check value for new, smaller index range
+    # -- value checked was less than arg value
+    elif lst[mid] < value:
+        return binary_search(lst, value, left=(mid+1), right=right)
 
-    pass
+
+print(binary_search([1, 2, 3, 4, 6, 8, 9, 14,
+      17, 23, 35, 36, 37, 48, 49, 50, 52], 17))
