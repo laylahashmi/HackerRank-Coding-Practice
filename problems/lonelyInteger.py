@@ -6,14 +6,10 @@
 #
 
 def lonelyinteger(a):
-    result = {}
-    for number in a:
-        if number not in result:
-            result[number] = 0
-        result[number] += 1
-    for value in result:
-        if result[value] == 1:
-            return value
+    s = set(a)
+    for i in s:
+        if a.count(i) == 1:
+            return i
 
 
 print(lonelyinteger([1, 2, 3, 4, 3, 2, 1]))
