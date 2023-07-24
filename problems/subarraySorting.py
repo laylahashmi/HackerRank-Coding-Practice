@@ -28,7 +28,7 @@ def birthday(s, d, m):
     return count
 
 
-s = [2, 2, 1, 3, 2]
+s = [2, 2, 1, 3, 2, 2]
 d = 4
 m = 2
 print(birthday(s, d, m))
